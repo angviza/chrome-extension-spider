@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>黄页爬虫</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft Yahei';
+            width: 150px;
+            min-height: 160px;
+        }
+
+        .button {
+            padding: 3px;
+            text-decoration: none;
+            display: inline-block;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+            outline: none;
+            font-size: 15px;
+            height: 20px;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background-color: #777;
+        }
+
+        .button:active {
+            top: 1px;
+            left: 1px;
+        }
+
+        .engraved {
+            background: rgb(24, 23, 23);
+            border: 1px solid #777;
+            color: rgb(224, 212, 212);
+            text-shadow: 0px 1px 1px #fff;
+            font-weight: solid;
+            margin: 70px 0px 0px 50px;
+
+        }
+
+        ul {
+            padding: 10px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        /** * Create the circle to click */
+
+        /** * Checkbox Two */
+
+        .checkboxTwo {
+            width: 60px;
+            height: 20px;
+            background: #333;
+            margin: -19px 40px 10px 60px;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        /** * Create the line for the circle to move across */
+
+        .checkboxTwo:before {
+            content: '';
+            position: absolute;
+            top: 9.5px;
+            left: 7px;
+            height: 1px;
+            width: 45px;
+            background: #111;
+        }
+
+        .checkboxTwo label {
+            display: block;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            transition: all .5s ease;
+            cursor: pointer;
+            position: absolute;
+            top: 4.5px;
+            z-index: 10;
+            left: 6px;
+            background: #ddd;
+        }
+
+        /** * Create the click event for the checkbox */
+
+        .checkboxTwo input[type=checkbox]:checked+label {
+            left: 42px;
+            background: #26ca28;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li>
+            <section>
+                <!-- Checbox Two -->
+                <span>开始抓取:</span>
+                <div class="checkboxTwo">
+                    <input type="checkbox" id="checkboxTwoInput" checked="checked" style="display:none;" name="" />
+                    <label for="checkboxTwoInput"></label>
+                </div>
+            </section>
+        </li>
+        <li>状态：
+            <span id="state">已停止</span>
+        </li>
+        <li>进度:
+            <span id="count">0</span>
+        </li>
+        <li>速度:
+            <span id="interval">0</span> S
+        </li>
+        <li>
+            <a id="download" class="button engraved" href='javascript:;'>下载数据</a>
+        </li>
+    </ul>
+
+</body>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/popup.js"></script>
+
+</html>

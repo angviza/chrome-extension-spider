@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+    "name": "黄页蜘蛛",
+    "version": "0.0.2",
+    "description": "企业信息蜘蛛",
+    "omnibox": {
+        "keyword": "黄页蜘蛛"
+    },
+    "icons": {
+        "16": "icon/Spider_16.png",
+        "48": "icon/Spider_48.png",
+        "128": "icon/Spider_128.png"
+    },
+    "homepage_url": "http://www.rdquinn.top",
+    "permissions": [
+        "webNavigation",
+        "tabs",
+        "contextMenus",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "http://*/*",
+        "https://*/*",
+        "declarativeContent"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "browser_action": {
+        "default_icon": "icon/Spider_48.png",
+        "default_title": "黄页蜘蛛",
+        "default_popup": "html/popup.html"
+    },
+    "background": {
+        "scripts": [
+            "js/jquery-3.3.1.min.js",
+            "js/eventpage.js"
+        ]
+    },
+    "options_page": "html/options.html",
+    "options_ui": {
+        "page": "html/options.html",
+        "chrome_style": true
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "run_at": "document_end",
+        "js": ["js/jquery-3.3.1.min.js", "js/contentscript.js"]
+    }]
+}
